@@ -35,13 +35,16 @@ RUN set -ex \
         xz-utils \
         zip \
 
-    # Install Google Chrome
+    # Install Google Chrome nodejes
     && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && apt-get -qq update \
     && apt-get -qq -y install google-chrome-stable \
+    && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - 
+    && apt-get install -y nodejs vim
 
-    # Install chromedriver
+
+    # Install chromedriver 
     && wget -N https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip -P ~/ \
     && unzip ~/chromedriver_linux64.zip -d ~/ \
     && rm ~/chromedriver_linux64.zip \
