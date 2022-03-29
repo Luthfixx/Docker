@@ -40,8 +40,9 @@ RUN set -ex \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && apt-get -qq update \
     && apt-get -qq -y install google-chrome-stable \
-    && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - 
-    && apt install -y nodejs vim
+    && echo "deb https://deb.nodesource.com/setup_16.x \
+    && apt-get -qq update \
+    && apt-get -qq install -y nodejs vim \
 
 
     # Install chromedriver 
