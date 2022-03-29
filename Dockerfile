@@ -40,10 +40,7 @@ RUN set -ex \
     && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
     && apt-get -qq update \
     && apt-get -qq -y install google-chrome-stable \
-    && echo "deb https://deb.nodesource.com/setup_16.x \
-    && apt-get -qq update \
-    && apt-get -qq install -y nodejs vim \
-
+    
 
     # Install chromedriver 
     && wget -N https://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip -P ~/ \
