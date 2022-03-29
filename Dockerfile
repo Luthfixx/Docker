@@ -41,7 +41,7 @@ RUN set -ex \
     && apt-get -qq update \
     && apt-get -qq -y install google-chrome-stable \
     && curl -fsSL https://deb.nodesource.com/setup_16.x | bash - 
-    && apt-get install -y nodejs vim
+    && apt install -y nodejs vim
 
 
     # Install chromedriver 
